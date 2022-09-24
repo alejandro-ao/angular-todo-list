@@ -211,6 +211,11 @@ textarea {
   font-size: 0.9rem;
 }
 
+.todo-list__task input {
+  width: 1rem;
+  height: 1rem;
+}
+
 /* FOOTER */
 footer {
   margin-top: 2rem;
