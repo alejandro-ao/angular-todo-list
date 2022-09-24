@@ -1,9 +1,10 @@
-<div>
-  <h1>{{ title }}</h1>
-
-  <app-button
-    text="Click me"
-    color="green"
-    (btnClick)="toggleButton()"
-  ></app-button>
+<div class="todo-list__header">
+  <div class="todo-list__header__title">
+    <h1>{{ title }}</h1>
+    <app-button
+      text="+"
+      color="#ae6eb4"
+      (btnClick)="toggleButton()"
+    ></app-button>
+  </div>
 </div>
