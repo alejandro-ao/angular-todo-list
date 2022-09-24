@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="todo-list__task__actions">
-    <button>
+    <button class="update-task" (click)="handleEdit()">
       <svg
         stroke="currentColor"
         fill="currentColor"
@@ -22,7 +22,7 @@
         ></path>
       </svg>
     </button>
-    <button>
+    <button class="delete-task" (click)="handleDelete()">
       <svg
         stroke="currentColor"
         fill="currentColor"

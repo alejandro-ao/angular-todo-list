@@ -1,3 +1,8 @@
 <div class="todo-list__tasks">
-  <app-task-item *ngFor="let task of tasks" [task]="task"></app-task-item>
+  <app-task-item 
+    *ngFor="let task of tasks" 
+    [task]="task"
+    (onDelete)="deleteTask(task)"
+    (onUpdate)="updateTask(task)"
+  ></app-task-item>
 </div>
