@@ -3,14 +3,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  constructor() {}
 
-  title: string= "Hanabi Todo List"
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  title: string = 'Hababi Todo List';
+
+  toggleButton() {
+    console.log('Event emitted from button');
   }
-
 }
