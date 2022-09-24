@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { every } from 'rxjs';
 import { Task } from 'src/app/Task';
 
 @Component({
@@ -10,8 +9,10 @@ import { Task } from 'src/app/Task';
 export class TaskItemComponent implements OnInit {
   @Output() onDelete = new EventEmitter();
   @Output() onUpdate = new EventEmitter();
+  @Output() onCheck = new EventEmitter();
 
   @Input() task: Task = {
+    id: 1,
     name: 'default',
     description: 'default',
     checked: false,
@@ -20,13 +21,17 @@ export class TaskItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  
+
   handleEdit() {
     this.onUpdate.emit(this.task);
   }
-  
+
+  handleCheck(e: Event) {
+    this.task.checked = !this.task.checked;
+    this.onCheck.emit(this.task);
+  }
+
   handleDelete() {
     this.onDelete.emit(this.task);
   }
-
 }

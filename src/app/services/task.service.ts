@@ -1,24 +1,33 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { TASKS } from '../mock-tasks';
 import { Task } from '../Task';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  apiUrl: string = 'http://localhost:5002/tasks';
 
   getTasks() {
-    console.log('getting tasks from db');
-    return TASKS;
+    return this.http.get<Task[]>(this.apiUrl);
   }
 
   deleteTask(task: Task) {
-    console.log('deleting task from service: ', task);
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.http.delete<Task>(url);
   }
 
   updateTask(task: Task) {
-    console.log("updateing task from service:", task)
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.http.put<Task>(url, task, httpOptions);
   }
 }

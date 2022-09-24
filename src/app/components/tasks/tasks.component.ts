@@ -10,15 +10,21 @@ import { TaskService } from 'src/app/services/task.service';
 export class TasksComponent implements OnInit {
   constructor(private taskService: TaskService) {}
 
-  ngOnInit(): void {}
+  tasks: Task[] = [];
 
-  tasks: Task[] = this.taskService.getTasks();
+  ngOnInit(): void {
+    this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
+  }
 
   deleteTask(task: Task) {
-    this.taskService.deleteTask(task);
+    this.taskService
+      .deleteTask(task)
+      .subscribe(
+        () => (this.tasks = this.tasks.filter((t) => t.id !== task.id))
+      );
   }
 
   updateTask(task: Task) {
-    this.taskService.updateTask(task);
+    this.taskService.updateTask(task).subscribe();
   }
 }

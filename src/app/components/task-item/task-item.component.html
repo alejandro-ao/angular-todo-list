@@ -1,6 +1,9 @@
 <div class="todo-list__task">
   <div class="todo-list__task__info">
-    <input type="checkbox" />
+    <input
+      type="checkbox"
+      (change)="handleCheck($event)"
+    />
     <div class="center-vertical">
       <p>{{ task.name }}</p>
       <small>{{ task.description }}</small>
