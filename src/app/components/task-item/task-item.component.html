@@ -1,12 +1,12 @@
 <div class="todo-list__task">
   <div class="todo-list__task__info">
     <input
-      [ngModel]="task.checked"
+      [ngModel]="task.finished"
       type="checkbox"
       (change)="handleCheck($event)"
     />
     <div class="center-vertical">
-      <p [ngClass]="{ crossed: task.checked }">{{ task.name }}</p>
+      <p [ngClass]="{ crossed: task.finished }">{{ task.name }}</p>
       <small>{{ task.description }}</small>
     </div>
   </div>

@@ -22,7 +22,7 @@ export class TaskItemComponent implements OnInit {
   }
 
   handleCheck(e: Event) {
-    this.task.checked = !this.task.checked;
+    this.task.finished = !this.task.finished;
     this.onCheck.emit(this.task);
   }
 

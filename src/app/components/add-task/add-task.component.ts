@@ -24,7 +24,7 @@ export class AddTaskComponent implements OnInit {
       // _id: Math.floor(Math.random() * 10000000000),
       name: this.taskName,
       description: this.taskDescription,
-      checked: false,
+      finished: false,
     };
 
     this.onAddTask.emit(this.newTask);
