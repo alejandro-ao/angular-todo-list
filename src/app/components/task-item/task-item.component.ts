@@ -11,12 +11,7 @@ export class TaskItemComponent implements OnInit {
   @Output() onUpdate = new EventEmitter();
   @Output() onCheck = new EventEmitter();
 
-  @Input() task: Task = {
-    id: 1,
-    name: 'default',
-    description: 'default',
-    checked: false,
-  };
+  @Input() task: Task; 
 
   constructor() {}
 
