@@ -17,12 +17,6 @@
       "name": "Code a todo app in Angular",
       "description": "Remember to connect to remote DB",
       "checked": false
-    },
-    {
-      "id": 5,
-      "name": "Clean the flat",
-      "description": "Before noon",
-      "checked": false
     }
   ]
 }
