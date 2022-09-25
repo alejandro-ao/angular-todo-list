@@ -22,12 +22,12 @@ export class TaskService {
   }
 
   deleteTask(task: Task) {
-    const url = `${this.apiUrl}/${task.id}`;
+    const url = `${this.apiUrl}/${task._id}`;
     return this.http.delete<Task>(url);
   }
 
   updateTask(task: Task) {
-    const url = `${this.apiUrl}/${task.id}`;
+    const url = `${this.apiUrl}/${task._id}`;
     return this.http.put<Task>(url, task, httpOptions);
   }
 

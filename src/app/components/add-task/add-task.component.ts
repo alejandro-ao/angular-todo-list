@@ -21,7 +21,7 @@ export class AddTaskComponent implements OnInit {
 
   onSubmit() {
     this.newTask = {
-      id: Math.floor(Math.random() * 10000000000),
+      // _id: Math.floor(Math.random() * 10000000000),
       name: this.taskName,
       description: this.taskDescription,
       checked: false,

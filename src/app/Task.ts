@@ -1,5 +1,5 @@
 export interface Task {
-  id: number,
+  _id?: number,
   name: string;
   description: string;
   checked: boolean;
