@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { Observable } from 'rxjs';
 import { Task } from '../Task';
 
 const httpOptions = {
@@ -15,23 +15,23 @@ const httpOptions = {
 export class TaskService {
   constructor(private http: HttpClient) {}
 
-  apiUrl: string = 'http://localhost:5001/tasks';
+  apiUrl: string = '/tasks';
 
-  getTasks() {
+  getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.apiUrl);
   }
 
-  deleteTask(task: Task) {
+  deleteTask(task: Task): Observable<Task> {
     const url = `${this.apiUrl}/${task._id}`;
     return this.http.delete<Task>(url);
   }
 
-  updateTask(task: Task) {
+  updateTask(task: Task): Observable<Task> {
     const url = `${this.apiUrl}/${task._id}`;
     return this.http.patch<Task>(url, task, httpOptions);
   }
 
-  addTask(task: Task) {
+  addTask(task: Task): Observable<Task> {
     return this.http.post<Task>(this.apiUrl, task, httpOptions);
   }
 }
