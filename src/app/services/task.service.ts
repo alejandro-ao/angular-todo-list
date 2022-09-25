@@ -15,7 +15,7 @@ const httpOptions = {
 export class TaskService {
   constructor(private http: HttpClient) {}
 
-  apiUrl: string = 'http://localhost:5002/tasks';
+  apiUrl: string = 'http://localhost:5001/tasks';
 
   getTasks() {
     return this.http.get<Task[]>(this.apiUrl);
